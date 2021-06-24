@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hola/screen/Login.dart';
+import 'package:hola/screens_login/login_screen.dart';
 
 class REGISTRO extends StatelessWidget  {
   TextEditingController nameController = TextEditingController();
@@ -79,7 +79,7 @@ class REGISTRO extends StatelessWidget  {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => TECFOOD()),
+                          MaterialPageRoute(builder: (context) => LoginScreen()),
                         );
                       },
                     )),

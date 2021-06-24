@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hola/screen/Login.dart';
+import 'package:hola/screens_login/login_screen.dart';
 import 'package:hola/screen/Registro_restaurante.dart';
 
 
@@ -48,7 +48,7 @@ class MenuLateral extends StatelessWidget{
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TECFOOD()),
+                MaterialPageRoute(builder: (context) => LoginScreen()),
               );
             },
           )

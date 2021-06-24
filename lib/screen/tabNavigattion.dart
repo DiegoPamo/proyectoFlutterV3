@@ -12,6 +12,7 @@ class Api extends StatefulWidget {
 }
 
 class _MyAppState extends State<Api> {
+
   Future getRestData() async {
     var response = await http.get(Uri.https('www.tecfood.club', '/74054946816/api/Restaurante/'));
     var jsonData = jsonDecode(response.body);

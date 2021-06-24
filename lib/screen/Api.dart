@@ -1,10 +1,12 @@
-import 'package:hola/screen/Login.dart';
+import 'package:hola/screens_login/login_screen.dart';
 import 'package:hola/screen/tabNavigattion.dart';
 import 'package:hola/screen/MenusList.dart';
 import 'package:flutter/material.dart';
 import 'package:hola/screen/menu_lateral.dart';
 
 class TabNavigation extends StatefulWidget {
+
+  static const routeName = '/home';
   @override
   _tapNavState createState() => _tapNavState();
 }

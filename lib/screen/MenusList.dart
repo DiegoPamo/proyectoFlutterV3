@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:hola/screen/Login.dart';
+import 'package:hola/screens_login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:hola/screen/menu_lateral.dart';
@@ -25,6 +25,7 @@ class _MenusState extends State<Menus> {
       Menu menu = Menu(u['restaurante'],u['entradas'],u['menus'], u['bebida'], u['total']);
       menus.add(menu);
     }
+    print(menus);
     return menus;
   }
 
@@ -58,19 +59,19 @@ class _MenusState extends State<Menus> {
                                   style: TextStyle(height: 2, fontSize: 20),
                                 ),
                                 Text(
-                                  snapshot.data[i].entradas,
+                                  snapshot.data[i].entradas[1],
                                   style: TextStyle(height: 1, fontSize: 15),
                                 ),
                                 Text(
-                                  snapshot.data[i].menus,
+                                  snapshot.data[i].menus[1],
                                   style: TextStyle(height: 1, fontSize: 15),
                                 ),
                                 Text(
-                                  snapshot.data[i].bebidas,
+                                  snapshot.data[i].bebidas[1],
                                   style: TextStyle(height: 1, fontSize: 15),
                                 ),
                                 Text(
-                                  snapshot.data[i].total,
+                                  snapshot.data[i].total[1],
                                   style: TextStyle(height: 1, fontSize: 15),
                                 ),
                                 SizedBox(height: 20),
