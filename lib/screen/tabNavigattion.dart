@@ -3,8 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:hola/screen/menu_lateral.dart';
+import 'package:hola/screen/DetailScreen.dart';
 import 'package:hola/models/restaurante.dart';
+
 
 class Api extends StatefulWidget {
   @override
@@ -48,28 +49,38 @@ class _MyAppState extends State<Api> {
                    padding: EdgeInsets.all(20),
                     child: Card(
                       color: Colors.white,
-                      child: Column(
-                      children: <Widget>[
-                        Image.network(snapshot.data[i].vista),
-                        Text(
-                          snapshot.data[i].nombre_rest,
-                          style: TextStyle(height: 2, fontSize: 20),
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailScreen(todo: '${snapshot.data[i].nombre_rest}',vista: '${snapshot.data[i].vista}',),
+                            )
+                          );
+                        },
+                        child: Column(
+                          children: <Widget>[
+                            Image.network(snapshot.data[i].vista),
+                            Text(
+                              snapshot.data[i].nombre_rest,
+                              style: TextStyle(height: 2, fontSize: 20),
+                            ),
+                            Text(
+                              snapshot.data[i].ubicacion,
+                              style: TextStyle(height: 1, fontSize: 15),
+                            ),
+                            Text(
+                              snapshot.data[i].direccion,
+                              style: TextStyle(height: 1, fontSize: 15),
+                            ),
+                            SizedBox(height: 20),
+                            Icon(
+                              Icons.favorite,
+                              color: Colors.yellow,
+                              size: 40,
+                            ),
+                          ],
                         ),
-                        Text(
-                          snapshot.data[i].ubicacion,
-                          style: TextStyle(height: 1, fontSize: 15),
-                        ),
-                        Text(
-                          snapshot.data[i].direccion,
-                          style: TextStyle(height: 1, fontSize: 15),
-                        ),
-                        SizedBox(height: 20),
-                        Icon(
-                          Icons.favorite,
-                          color: Colors.yellow,
-                          size: 40,
-                    ),
-                ],
                       ),
                     ),
                );

@@ -1,8 +1,10 @@
 import 'package:hola/screens_login/login_screen.dart';
-import 'package:hola/screen/tabNavigattion.dart';
-import 'package:hola/screen/MenusList.dart';
 import 'package:flutter/material.dart';
 import 'package:hola/screen/menu_lateral.dart';
+
+import 'package:hola/screen/tabNavigattion.dart';
+import 'package:hola/screen/MenusList.dart';
+import 'package:hola/screen/Markers_GoogleMaps_Rest.dart';
 
 class TabNavigation extends StatefulWidget {
 
@@ -18,6 +20,7 @@ class _tapNavState extends State<TabNavigation> {
   final tabs = [
     Center(child: Api(),),
     Center(child: Menus(),),
+    Center(child: Markers_Google(),),
   ];
 
   @override
@@ -44,6 +47,10 @@ class _tapNavState extends State<TabNavigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.cabin),
             title: Text('Menu'),),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.cabin),
+            title: Text('Ubicaciones'),),
         ],
         onTap: (index){
           setState(() {

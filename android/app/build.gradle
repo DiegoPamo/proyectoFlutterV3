@@ -35,7 +35,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.hola"
-        minSdkVersion 16
+        minSdkVersion 23   //Aqui se debe de cambiar para usar google maps de 16 a 23
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
