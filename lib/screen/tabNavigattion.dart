@@ -20,7 +20,7 @@ class _MyAppState extends State<Api> {
     List<Restaurant> restaurants = [];
 
     for(var u in jsonData){
-      Restaurant restaurant = Restaurant(u['nombre_rest'],u['ubicacion'], u['direccion'], u['vista']);
+      Restaurant restaurant = Restaurant(u['nombre_rest'],u['ubicacion'], u['direccion'], u['vista'], u['latitude'],u['longitude']);
       restaurants.add(restaurant);
     }
     return restaurants;
@@ -38,7 +38,6 @@ class _MyAppState extends State<Api> {
                 return Container(
                   child: Center(
                     child: Text('Loading...'),
-
                   ),
                 );
               }else
@@ -54,7 +53,10 @@ class _MyAppState extends State<Api> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DetailScreen(todo: '${snapshot.data[i].nombre_rest}',vista: '${snapshot.data[i].vista}',),
+                                builder: (context) => DetailScreen(todo: '${snapshot.data[i].nombre_rest}',
+                                                                    vista: '${snapshot.data[i].vista}',
+                                                                    latitude: '${snapshot.data[i].latitude}',
+                                                                    longitude: '${snapshot.data[i].longitude}',),
                             )
                           );
                         },

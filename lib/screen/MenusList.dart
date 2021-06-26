@@ -12,17 +12,13 @@ class Menus extends StatefulWidget {
 
 class _MenusState extends State<Menus> {
 
-  List lista = [
-    "https://images-ext-2.discordapp.net/external/PTOl0nZQ4a63K8fjAJKSrSg_ByVKAlsMMgudTQ33iJk/https/gestion.pe/resizer/FkkXX6kmWI6EgkqeXi7bNRBevzU%3D/580x330/smart/filters%3Aformat%28jpeg%29%3Aquality%2875%29/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/UIHUZAOLA5DSVDSL3HCV6ICOZ4.jpg"
-  ];
-
   Future getMenData() async {
-    var response = await http.get(Uri.https('www.tecfood.club', '/74054946816/api/Menus/'));
+    var response = await http.get(Uri.https('www.tecfood.club', '/74054946816/api/Post/'));
     var jsonData = jsonDecode(response.body);
     List<Menu> menus = [];
 
     for(var u in jsonData){
-      Menu menu = Menu(u['restaurante'],u['entradas'],u['menus'], u['bebida'], u['total']);
+      Menu menu = Menu(u['title'],u['photo']);
       menus.add(menu);
     }
     print(menus);
@@ -53,32 +49,10 @@ class _MenusState extends State<Menus> {
                             color: Colors.white,
                             child: Column(
                               children: <Widget>[
-                                Image.network(lista[i]),
+                                Image.network(snapshot.data[i].photo, width: 150, height: 160,),
                                 Text(
-                                  snapshot.data[i].restaurante.nombre_rest,
-                                  style: TextStyle(height: 2, fontSize: 20),
-                                ),
-                                Text(
-                                  snapshot.data[i].entradas[1],
-                                  style: TextStyle(height: 1, fontSize: 15),
-                                ),
-                                Text(
-                                  snapshot.data[i].menus[1],
-                                  style: TextStyle(height: 1, fontSize: 15),
-                                ),
-                                Text(
-                                  snapshot.data[i].bebidas[1],
-                                  style: TextStyle(height: 1, fontSize: 15),
-                                ),
-                                Text(
-                                  snapshot.data[i].total[1],
-                                  style: TextStyle(height: 1, fontSize: 15),
-                                ),
-                                SizedBox(height: 20),
-                                Icon(
-                                  Icons.favorite,
-                                  color: Colors.yellow,
-                                  size: 40,
+                                  snapshot.data[i].title,
+                                  style: TextStyle(height: 1, fontSize: 20),
                                 ),
                               ],
                             ),

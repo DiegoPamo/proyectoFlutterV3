@@ -1,6 +1,5 @@
 class Menu {
-  final String restaurante, total;
-  final List<String>entradas ,menus, bebida;
+  final String title, photo;
 
-  Menu(this.restaurante,this.entradas ,this.menus, this.bebida, this.total);
+  Menu(this.title,this.photo);
 }

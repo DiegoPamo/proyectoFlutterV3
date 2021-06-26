@@ -10,7 +10,7 @@ class _Markers_GoogleState extends State<Markers_Google> {
 
   GoogleMapController myMapController;
   final Set<Marker> _markers = new Set();
-  static const LatLng _mainLocation = const LatLng(25.69893, 32.6421);
+  static const LatLng _mainLocation = const LatLng(-16.449960,-71.534698);
 
   @override
   Widget build(BuildContext context) {
